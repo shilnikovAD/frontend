@@ -533,4 +533,11 @@ footer {
         width: max-content;
         max-width: 100%;
     }
+    .case-recent-work{
+        flex-direction: column;
+        width: max-content;
+        max-width: 100%;
+        align-items: center;
+    }
+     
 }
