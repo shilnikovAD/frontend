@@ -37,7 +37,6 @@
                 <div class="active-content">
                     <h1 class="persona-name">Артур Шильников</h1>
                     <p class="persona-description">
-                        ПЕНИС
                         Intro text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                     </p>
                 </div>
@@ -153,64 +152,91 @@
             </li>
         </ul>
     </div>
-    <div class="recent-work">
-        <h1 class="resent-work-header">Recent Work</h1>
-        <p class="recent-work-description">
-            Solving user & business problems since last 15+ years.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.         
-        </p>
-         <ul class="case-recent-work">
-            <li class="work-content">
-                <div class="client-wrapper2">
-                    <img src="./assets/images/Maskgroup.jpg" alt="" class="">
+    <div class="recent-work" id="recent-work">
+  <div class="container">
+    <h1 class="resent-work-header">Recent Work</h1>
+    <p class="recent-work-description">
+      Solving user & business problems since last 15+ years.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.         
+    </p>
+    <ul class="case-recent-work">
+      <li class="work-content">
+        <div class="client-wrapper2">
+          <img src="./assets/images/Maskgroup.jpg" alt="Recent work preview" class="">
+          <p class="claient-before">
+            Claient before
+          </p>
+        </div>
+        <div>
+          <h2 class="resent-work-header2">Work name here</h2>
+          <p class="work-name-description">Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.
+          </p>
+          <button class="view-case-button green-button">Know more ></button>
+        </div>
+      </li>
+      <li class="work-content">
+        <div class="client-wrapper2">
+          <img src="./assets/images/Maskgroup(1).jpg" alt="Recent work preview" class="">
+          <p class="claient-before">
+            Claient before
+          </p>
+        </div>
+        <div>
+          <h2 class="resent-work-header2">Work name here</h2>
+          <p class="work-name-description">Rempor incididunt ut labore et dolore magna aliqua. sed do eiusmod tempor incididunt u
+          </p>
+          <button class="view-case-button green-button">Know more ></button>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+    <div class="get-in-touch" id="get-in-touch">
+  <div class="container">
+    <h1 class="last-header">Get In Touch</h1>
+    <p class="last-description">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+    </p>
+  </div>
+</div>
+<div class="giga">
+  <div class="container">
+    <form onsubmit="return validateForm()">        
+      <label for="email">Электронная почта</label>
+      <input type="email" id="email" placeholder="Введите ваш email" required>
 
-                    <p class="claient-before">
-                        Claient before
-                    </p>
-                </div>
-                <div>
-                    <h2 class="resent-work-header2">Work name here</h2>
-                    <p class="work-name-description">Labore et dolore magna aliqua. sed do eiusmod tempor incididunt ut labore et dolore magna.
-                    </p>
-                    <button class="view-case-button green-button">Know more ></button>
-                </div>
-            </li>
-            <li class="work-content">
-                <div class="client-wrapper2">
-                    <img src="./assets/images/Maskgroup(1).jpg" alt="" class="">
-                    <p class="claient-before">
-                        Claient before
-                    </p>
-                </div>
-                <div>
-                    <h2 class="resent-work-header2">Work name here</h2>
-                    <p class="work-name-description">Rempor incididunt ut labore et dolore magna aliqua. sed do eiusmod tempor incididunt u
-                    </p>
-                    <button class="view-case-button green-button">Know more ></button>
-                </div>
-                
-            </li>
-         </ul> 
-    </div>
-    <div class="get-in-touch">
-        <h1 class="last-header">Get In Touch</h1>
-        <p class="last-description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        </p>
+      <label for="mobile">Телефон</label>
+      <input type="tel" id="mobile" placeholder="Введите номер телефона" pattern="[0-9]{11}" title="Пожалуйста, введите корректный 11-значный номер телефона" required>
 
-    </div>
-    <div class="giga" >
-    <form>        
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Please enter your email">
-
-        <label for="mobile">Mobile</label>
-        <input type="tel" id="mobile" placeholder="Enter mobile">
-
-        <label for="message">Message</label>
-        <textarea id="message" placeholder="Enter your message"></textarea>
-        <button class="button">Submit ></button>
+      <label for="message">Сообщение</label>
+      <textarea id="message" placeholder="Введите ваше сообщение" required minlength="11"></textarea>
+      <button type="submit" class="button">Отправить ></button>
     </form>
-    </div>
+  </div>
+</div>
     <footer>Made with ❤️</footer>
+    <script>
+  function validateForm() {
+    const email = document.getElementById('email');
+    const mobile = document.getElementById('mobile');
+    const message = document.getElementById('message');
+    
+    if (!email.validity.valid) {
+      alert('Пожалуйста, введите корректный адрес электронной почты');
+      return false;
+    }
+    
+    if (!mobile.validity.valid) {
+      alert('Пожалуйста, введите корректный 11-значный номер телефона');
+      return false;
+    }
+    
+    if (!message.validity.valid) {
+      alert('Пожалуйста, введите сообщение (минимум 10 символов)');
+      return false;
+    }
+    
+    return true;
+  }
+</script>
 </body>
 </html>
